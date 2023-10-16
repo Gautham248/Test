@@ -1,0 +1,54 @@
+MERN Stack
+-creating websites with nodeJs as backend and react as frontend
+
+JS
+---
+JS-asynchronous,loosly typed,single threaded
+learn the basics
+solve leetcode
+understand the above buzzwords
+
+Backend
+--------
+Learn about Backend
+Create HTTP servers on express
+understand about Databases(SQL/ NoSQL)
+
+Frontend
+---------
+React
+State Management(Recoil,Redux)
+
+
+----------Checkpoint 1------------------------
+
+TypeScript
+grpc,trpc,open api,dockerization,aws,orm's,git/github,graphQL
+
+VERCEL stack
+-NextJS instead of React
+-Turtle repo
+
+----------Checkpoint 2------------------------
+1.Create lot of projects
+2.Checkpoint knowledge with opensource codebase
+-----------------------------------------------
+
+DEVOPS
+------
+
+-Docker/Containerization
+learn by dozkerizing your own fullstack app
+setup opensource codebases using docker
+
+Infrastructure As Code
+----------------------
+-terraform
+create your own terraform provider
+
+K8S(Kubernetes)-> container orchestration
+Helm is a package manager for kubernetes. It can be used to develop templates
+
+
+
+

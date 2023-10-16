@@ -1,0 +1,144 @@
+Why Git?
+Installation
+why should you use git command line
+
+setting -> git config --global user.name Gautham
+
+creating a new folder on desktop ..GIT Bash here
+type in "$ code ."---> opens VScode in that folder
+
+
+$ git init
+$ ls -lart(-lart shows hidden folders and files)--> you can see that a .git file is created
+
+In VSC
+------
+create a new file index.html and save it
+
+BASH
+-----
+$ git status
+it tells you that there are untracked files in the folder and asks you to track them
+
+NOTE-------------------------------------------------------------------------------
+Untracked-> git and the file arent related in any way/git isnt tracking the file
+ADD THE FILE--> git tracks the file, brings it to staging area
+Staging area->we put the files that are to be committed in the staging area
+what is a commit?
+Its a snapshot of code at a certain point in time
+Commit is done after the changes are made, changes can be made in the staging area
+
+Untracked--(ADD)-->Stage--(COMMIT)-->Unmodified--(EDIT)-->Modified--(STAGE)-->Stage
+-----------------------------------------------------------------------------------
+
+$ git add index.html
+$ git status
+
+whenever we need to start tracking our project, we need to commit it(this is known as the initial commit)
+
+$ git commit ---> opens a vim editor
+press " i "--> allows you to enter the VIM to type the initial committ message
+
+type in the commit message->usually used to notify the change being made. eg.. Initial commit
+
+TO EXIT THE VIM ---> "esc"--> :wq
+
+$ git status-->O/P-->nothing to commit,working tree clean
+
+Now we can start our project and now git will track the changes being made in the project
+
+$ touch about.html -->(Touch is used to create blank files, this command will create a blank file named about.html)
+
+$ touch contact.html
+$ touch monument.html
+
+$ git status--> multiple files that arent being tracked
+
+to add all the files to the staging area--> $ git add -A
+
+GOTO VSC-->make some changes to contacts.html
+$ git status
+git will show that contact.html is now modified
+
+NOW :::> Contact.html is present both in modified and also in the staging are
+the unmodified version(initial version) of the file is present in the staging area and the modified one under the modified tag
+
+
+$ git commit -m "Added more htmls"
+the -m tag allows you to add a commit message without opening the vim editor
+
+$ clear
+used to clear the terminal
+
+$ git checkout
+--------------
+Imagine that someone pranked you and modified all of your project files, saved it and shut down the system
+now that would make you really mad
+--What can you do about it?--
+$ git status
+now this will show that the files have been modified and the changes havent been committed
+to revert the content of the files to that of the previous commit-> $ git checkout <nameOfFile>
+
+in case multiple files were edited--> $ git checkout -f
+-------------------------------------------------------------
+
+$ git log
+tells us about the author and the commit messages
+now, if there were 1000 commits made and you need to check out the last n number of commits
+$ git log -p -n(#number)
+press "q" to exit
+
+
+$ git diff
+used to tell what differences where made
+$ git diff compares working tree to the staging area and shows you the changes that were made
+
+MAKE A DIFFERENCE IN VSC and then .....
+$ git diff		   --> shows you the change(compares working directory and the staging area)
+$ git add -A	   -->adds the change
+$ git diff		   --> no change between the working directory and staging area
+$ git diff --staged  --> compares the staging area to the previous commit
+$ git commit -a -m "This command is used to directly commit files without staging them"
+
+
+$ git rm       		--> removes the file from staging area and also deletes the files
+$ git rm --cached		--> removes the file only from the staging area
+
+
+for a summarized git status :
+$ git status -s
+Red color M  ->modified staging area
+green color M->denotes working tree
+combined 	 ->modified in both staging and working tree
+
+
+$ git ignore
+There might be files that do not require to be tracked
+$ touch .gitignore ->creates the .gitignore file
+to ignore a certain file, add the name of the file to .gitignore
+eg.
+mylogs.log-->ignores the log file
+*.log	    -->ignores the entire class of log files present 
+/mylogs.log-->ignores the log file present in the current folder/working directory
+<foldername>/-->ignores an entire folder
+
+
+BRANCHES
+--------
+Imagine you're working on a critical product.
+branch creates a new copy  of the master branch and lets you work on the copy 
+and it wouldnt pose any risk to the existing files
+$ git branch
+on master branch, working tree clean
+$ git branch <nameOfBranch>
+$ git branch
+	<nameOfBranch>
+ *    master
+::to switch to the new branch..
+$ git checkout <nameOfBranch>
+
+::to switch to a new branch as you creater it
+$ git checkout -b <nameOfBranch>
+
+::to merge two branch
+$ git merge
